@@ -51,7 +51,6 @@ client.on('message', message => {
       message.reply('You didn\'t mention the user to kick!');
     }
   }
-});
   // if the message content starts with "!ban"
   if (message.content.startsWith('?ban')) {
     // Assuming we mention someone in the message, this will return the user
