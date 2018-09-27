@@ -7,7 +7,13 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === '?help') {
-       message.reply("need help?\nHeres the known commands:\n\n`?server`\n`?user`");
+       message.reply("need help?\nHeres the known commands:\n\n`?server`\n`?user`\n?ping");
+       }
+    });
+client.on('message', message => {
+    if (message.content === '?ping') {
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
        }
 });
 client.on('message', message => {
