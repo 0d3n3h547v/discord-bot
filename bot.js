@@ -15,7 +15,7 @@ client.on('message', message => {
   // Ignore messages that aren't from a guild
   if (!message.guild) return;
 
-if(command === "kick") {
+if(command === "?kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
