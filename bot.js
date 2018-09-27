@@ -12,7 +12,7 @@ client.on('message', message => {
     });
 client.on('message', message => {
     if (message.content === '?ping') {
-       message.reply(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+       message.channel.send(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
        }
 });
 client.on('message', message => {
