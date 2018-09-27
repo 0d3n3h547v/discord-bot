@@ -43,6 +43,5 @@ if(command === "?kick") {
     message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
 
    }
-}
 });
 client.login(process.env.BOT_TOKEN);
