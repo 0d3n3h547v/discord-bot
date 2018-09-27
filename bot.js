@@ -32,9 +32,9 @@ return message.reply("Sorry, you don't have permissions to use this!");
          * Make sure you run this on a member, not a user!
          * There are big differences between a user and a member
          */
-        member.kick('Optional reason that will display in the audit logs').then(() => {
-          // We let the message author know we were able to kick the person
-          message.reply(`Successfully kicked ${user.tag}`);
+        await member.kick(reason)
+      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
+message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
         }).catch(err => {
           // An error happened
           // This is generally due to the bot not being able to kick the member,
