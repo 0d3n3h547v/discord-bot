@@ -30,7 +30,7 @@ client.on('message', message => {
     }
   }
 //=================================================================== ban
-    if (message.content.startsWith('!ban')) {
+    if (message.content.startsWith('?ban')) {
       if(!message.member.roles.some(r=>["OWNERS"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
     const user = message.mentions.users.first();
