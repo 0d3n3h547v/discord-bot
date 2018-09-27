@@ -70,6 +70,6 @@ client.on('message', message => {
     else if (message.content === `?user`) {
     message.channel.send(`your username: **${message.author.username}**\nYour ID: **${message.author.id}**`);
        }
-    });
+    }
   });
 client.login(process.env.BOT_TOKEN);
