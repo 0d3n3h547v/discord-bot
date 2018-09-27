@@ -16,7 +16,7 @@ client.on('message', message => {
   if (!message.guild) return;
 
   // If the message content starts with "!kick"
-  if (message.content.startsWith('!kick')) {
+  if (message.content.startsWith('?kick')) {
     // Assuming we mention someone in the message, this will return the user
     // Read more about mentions over at https://discord.js.org/#/docs/main/stable/class/MessageMentions
     if(!message.member.roles.some(r=>["OWNERS", "ADMIN"].includes(r.name)) )
