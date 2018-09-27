@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === '?help') {
-       message.reply('need help?\nHeres the known commands: ?server');
+       message.reply('need help?\nHeres the known commands:\n?server\n?user');
        }
 });
 client.on('message', message => {
