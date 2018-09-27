@@ -20,10 +20,10 @@ client.on('message', message => {
     
  client.on('message', message => {
     if(message.content === '?purge') {
-    // This command removes all messages from all users in the channel, from 2 up to 10000.
-    const deleteCount = parseInt(args[0], 1000);
-    if(!deleteCount || deleteCount < 2 || deleteCount > 10000)
-return message.reply("Please provide a number between 2 and 10.000 for the number of messages to delete");
+    // This command removes all messages from all users in the channel, from 2 up to 100.
+    const deleteCount = parseInt(args[0], 10);
+    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
+return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
     }
  }
 });
