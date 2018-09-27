@@ -15,7 +15,7 @@ client.on('message', message => {
        message.channel.send(`#SERVER INFORMATION:\n\nName: ${message.guild.name}\nMembers: ${message.guild.memberCount}\nServer created: ${message.guild.createdAt}\nRegion: ${message.guild.region}`);
        }
     else if (message.content === `?user`) {
-    message.channel.send(`your username: `${message.author.username}`\nYour ID: `${message.author.id});
+    message.channel.send(`your username:` `${message.author.username}``\nYour ID:` `${message.author.id}`);
        }
 });
 
