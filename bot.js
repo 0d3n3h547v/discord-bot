@@ -12,7 +12,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content === '?server') {
-       message.channel.send(`#SERVER INFO:\n\n```Name: ${message.guild.name}\nMembers: ${message.guild.memberCount}````);
+       message.channel.send(`#SERVER INFO:\n\n````Name: ${message.guild.name}\nMembers: ${message.guild.memberCount}`````);
        }
 });
 
