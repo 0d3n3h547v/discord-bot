@@ -106,6 +106,7 @@ client.on('message', message => {
       .setDescription('Hello, this is a slick embed!');
     // Send the embed to the same channel as the message
     message.channel.send(embed);
+     }
   }
 });
 client.login(process.env.BOT_TOKEN);
