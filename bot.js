@@ -7,12 +7,12 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === '?help') {
-       message.reply('Need help?');
+       message.reply('need help?\nHeres the known commands: ?server');
        }
 });
 client.on('message', message => {
     if (message.content === '?server') {
-       message.channel.send(`#SERVER INFO:\n\nName: ${message.guild.name}\nMembers: ${message.guild.memberCount}`);
+       message.channel.send(`#SERVER INFORMATION:\n\nName: ${message.guild.name}\nMembers: ${message.guild.memberCount}\nServer created: ${message.guild.createdAt}\nRegion: ${message.guild.region}`);
        }
 });
 
