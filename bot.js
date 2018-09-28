@@ -75,7 +75,7 @@ client.on('message', message => {
     // Send the embed to the same channel as the message
     message.channel.send(embed);
   }
-  if (message.content.startsWith(config.prefix + "?eval")) {
+  if (message.content.startsWith(config.prefix + "eval")) {
     if(message.author.id !== config.ownerID) return;
     try {
       const code = args.join(" ");
