@@ -115,11 +115,11 @@ async function googleCommand(msg, args) {
     const deleteCount = parseInt(args[0], 10);
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
       return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
-            async lambda() {
+            async function(1) {
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
-            }
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
-}
+            }
+      }
  });
 client.login(process.env.BOT_TOKEN);
