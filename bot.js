@@ -81,10 +81,7 @@ client.on('message', message => {
       // Set the color of the embed
       .setColor(0xFF0000)
       // Set the main content of the embed
-      .setDescription {
-            (`List of all commands ready to be used/secure. Be sure to use the prefix \`?\` before running a command.\n**Commands**\n`),
-            (`\`kick\`, \`ban\`, \`ping\`, \`server\`, \`user\`, \`clean\``) ;
-      }
+      .setDescription (`List of all commands ready to be used/secure. Be sure to use the prefix \`?\` before running a command.\n**Commands**\n ,\`kick\`, \`ban\`, \`ping\`, \`server\`, \`user\`, \`clean\``) ;
     // Send the embed to the same channel as the message
     message.channel.send(embed);
   }
