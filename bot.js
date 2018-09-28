@@ -49,11 +49,19 @@ client.on('message', message => {
       }
     } else {
       message.reply('you didn\'t mention the user to ban!');
-    }
+      }
     }
 //===================================================================== help
-  if (message.content === '?help') {
-    message.channel.send('pong!');
-  }
+  ('message', message => {
+    if (message.content === '?server') {
+       message.channel.send(`:satellite_orbital:\n$GETTING SERVER INFORMATION:\n\nName: **${message.guild.name}**\nMembers: **${message.guild.memberCount}**\nServer created: **${message.guild.createdAt}**\nRegion: **${message.guild.region}**\n\n$end transmission\n:satellite:`);
+       }
+    else if (message.content === `?user`) {
+    message.channel.send(`your username: **${message.author.username}**\nYour ID: **${message.author.id}**`);
+       }
+    ('message', message => {
+    if (message.content === '?ping') {
+       message.channel.send(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+       }
  });
 client.login(process.env.BOT_TOKEN);
