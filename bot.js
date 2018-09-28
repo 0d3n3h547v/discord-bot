@@ -29,6 +29,7 @@ client.on('message', message => {
       message.reply('you didn\'t mention the user to kick!');
     }
   }
+})
 //=================================================================== ban
     if (message.content.startsWith('?ban')) {
       if(!message.member.roles.some(r=>["OWNERS"].includes(r.name)) )
@@ -53,7 +54,7 @@ client.on('message', message => {
     }
   }
 //===================================================================== help
-  client.on('message', message => {
+  ('message', message => {
   // If the message is "ping"
   if (message.content === '?help') {
     // Send "pong" to the same channel
