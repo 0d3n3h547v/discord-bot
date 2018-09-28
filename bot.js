@@ -59,7 +59,7 @@ client.on('message', message => {
     message.channel.send(`your username: **${message.author.username}**\nYour ID: **${message.author.id}**`);
        }
     if (message.content === '?ping') {
-       message.channel.send(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+       message.channel.send(`Pong! Latency is ${message.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
        }
  });
 client.login(process.env.BOT_TOKEN);
