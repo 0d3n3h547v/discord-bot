@@ -19,8 +19,8 @@ client.on('message', message => {
 
 //=================================================================== kick
   if (message.content.startsWith(prefix + 'kick')) {
-    if(!message.member.roles.some(r=>["OWNERS", "Admin"].includes(r.name)) )
-    return message.reply("what are you trying to do? Only the owners can use this command");
+    if(!message.member.roles.some(r=>["OWNERS", "Admin", "Masters of Pokémon", "Mod", "Creator"].includes(r.name)) )
+    return message.reply("You need the \`moderators role\` to use this command.");
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
@@ -40,8 +40,8 @@ client.on('message', message => {
   }
 //=================================================================== ban
     if (message.content.startsWith(prefix + 'ban')) {
-      if(!message.member.roles.some(r=>["OWNERS"].includes(r.name)) )
-      return message.reply("what are you trying to do? Only the owners can use this command");
+      if(!message.member.roles.some(r=>["OWNERS", "Admin", "Masters of Pokémon", "Mod", "Creator"].includes(r.name)) )
+      return message.reply("You need the \`moderators role\` to use this command.");
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
@@ -123,10 +123,9 @@ async function googleCommand(msg, args) {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
 
             // Now, we want to check if the user has the `bot-commander` role, you can change this to whatever you want.
-            if (!message.member.roles.find("name", "bot-commander")) { // This checks to see if they DONT have it, the "!" inverts the true/false
-                message.channel.send('You need the \`bot-commander\` role to use this command.'); // This tells the user in chat that they need the role.
+            if(!message.member.roles.some(r=>["OWNERS", "Admin", "Masters of Pokémon", "Mod", "Creator"].includes(r.name)) )
+                message.channel.send('You need the \`moderators role\` to use this command.');
                 return; // this returns the code, so the rest doesn't run.
-            }
 
             // We want to check if the argument is a number
             if (isNaN(args[0])) {
