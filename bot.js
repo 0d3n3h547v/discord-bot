@@ -1,13 +1,12 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
 client.on('ready', () => {
   console.log('I am ready!');
 });
 
 client.on('message', message => {
   if (!message.guild) return;
- 
+
 //=================================================================== kick
   if (message.content.startsWith('?kick')) {
     if(!message.member.roles.some(r=>["OWNERS", "Admin"].includes(r.name)) )
@@ -51,12 +50,9 @@ client.on('message', message => {
     } else {
       message.reply('you didn\'t mention the user to ban!');
     }
-  }
+    }
 //===================================================================== help
-  ('message', message => {
-  // If the message is "ping"
   if (message.content === '?help') {
-    // Send "pong" to the same channel
     message.channel.send('pong!');
   }
  });
