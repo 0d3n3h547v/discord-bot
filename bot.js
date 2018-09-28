@@ -52,6 +52,7 @@ client.on('message', message => {
       message.reply('You didn\'t mention the user to ban!');
     }
   }
+});
 //===================================================================== new member
   client.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
@@ -61,5 +62,5 @@ client.on('message', message => {
   // Send the message, mentioning the member
   channel.send(`Welcome to the server, ${member}`);
       }
-  });
+ });
 client.login(process.env.BOT_TOKEN);
