@@ -56,10 +56,10 @@ client.on('message', message => {
        message.channel.send(`:satellite_orbital:\n$GETTING SERVER INFORMATION:\n\nName: **${message.guild.name}**\nMembers: **${message.guild.memberCount}**\nServer created: **${message.guild.createdAt}**\nRegion: **${message.guild.region}**\n\n$end transmission\n:satellite:`);
        }
     else if (message.content === `?user`) {
-    message.channel.send(`your username: **${message.author.username}**\nYour ID: **${message.author.id}**`);
+    message.channel.send(`**Your username:** ${message.author.username}\n**Your ID:** ${message.author.id}`);
        }
     if (message.content === '?ping') {
-       message.channel.send(`Pong! Latency is ${message.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+       message.channel.send(`:ping_pong: motherfucker! Latency is **${Math.round(client.ping)}ms**`);
        }
  });
 client.login(process.env.BOT_TOKEN);
