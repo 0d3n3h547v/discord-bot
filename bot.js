@@ -53,7 +53,7 @@ client.on('message', message => {
     }
 //===================================================================== help
     if (message.content === '?server') {
-       message.channel.send(`:satellite_orbital:\`\`\`js\n$GETTING SERVER INFORMATION:\n\nName: ${message.guild.name}\nMembers: ${message.guild.memberCount}\nServer created: ${message.guild.createdAt}\nRegion: ${message.guild.region}\n\n$end transmission\`\`\``);
+       message.channel.send(`:satellite_orbital:\`\`\`js\n$GETTING SERVER INFORMATION:\n\nName: ${message.guild.name}\nServer ID: ${message.guild.id}\nMembers: ${message.guild.memberCount}\nServer build: ${message.guild.createdAt}\nServer Creator: ${message.guild.owner}\nOwner ID: ${message.guild.ownerID}\nRegion: ${message.guild.region}\nVerification level: ${message.guild.verificationLevel}\nServer verified: ${message.guild.verified}\n\n\n$end transmission\`\`\``);
        }
     else if (message.content === `?user`) {
     message.channel.send(`**Your username:** \`${message.author.username}\`\n**Your ID:** \`${message.author.id}\``);
