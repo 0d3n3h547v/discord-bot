@@ -11,28 +11,28 @@ client.on('message', message => {
 //=================================================================== kick
   if (message.content.startsWith('?kick')) {
     if(!message.member.roles.some(r=>["OWNERS", "Admin"].includes(r.name)) )
-    return message.reply("what are you trying to do? :thonk: Only Moderators can use this command");
+    return message.reply("what are you trying to do? Only the owners can use this command");
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
       if (member) {
         member.kick('Optional reason that will display in the audit logs').then(() => {
-          message.reply(`Successfully kicked ${user.tag}`);
+          message.reply(`successfully kicked ${user.tag}`);
         }).catch(err => {
-          message.reply('I was unable to kick the member');
+          message.reply('i was unable to kick the member');
           console.error(err);
         });
       } else {
-        message.reply('That user isn\'t in this guild!');
+        message.reply('that user isn\'t in this guild!');
       }
     } else {
-      message.reply('You didn\'t mention the user to kick!');
+      message.reply('you didn\'t mention the user to kick!');
     }
   }
 //=================================================================== ban
     if (message.content.startsWith('?ban')) {
       if(!message.member.roles.some(r=>["OWNERS"].includes(r.name)) )
-      return message.reply("what are you trying to do? :thonk:");
+      return message.reply("what are you trying to do? Only the owners can use this command");
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
@@ -40,7 +40,7 @@ client.on('message', message => {
         member.ban({
           reason: 'They were bad!',
         }).then(() => {
-          message.reply(`Successfully banned ${user.tag}`);
+          message.reply(`successfully banned ${user.tag}`);
         }).catch(err => {
           message.reply('i was unable to ban the member');
           console.error(err);
@@ -52,6 +52,12 @@ client.on('message', message => {
       message.reply('you didn\'t mention the user to ban!');
     }
   }
-//===================================================================== new member
+//===================================================================== help
+  client.on('message', message => {
+  // If the message is "ping"
+  if (message.content === '?help') {
+    // Send "pong" to the same channel
+    message.channel.send('pong!');
+  }
  });
 client.login(process.env.BOT_TOKEN);
