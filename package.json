@@ -9,7 +9,10 @@
   },
   
   "dependencies": {
-    "discord.js": "11.4.0",
-    "request": "2.81.0"
+    "bufferutil": "^4.0.0",
+    "cheerio": "^1.0.0-rc.2",
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+    "discord.js": "^11.4.2",
+    "winston": "^2.0.0"
   }
 }
