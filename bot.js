@@ -56,7 +56,7 @@ client.on('message', message => {
        message.channel.send(`:satellite_orbital:\`\`\`js\n$GETTING SERVER INFORMATION:\n\nName: ${message.guild.name}\nServer ID: ${message.guild.id}\nMembers: ${message.guild.memberCount}\nServer build: ${message.guild.createdAt}\nServer Creator: ${message.guild.owner}\nOwner ID: ${message.guild.ownerID}\nRegion: ${message.guild.region}\nVerification level: ${message.guild.verificationLevel}\nServer verified: ${message.guild.verified}\n\n\n$end transmission\`\`\``);
        }
     else if (message.content === `?user`) {
-    message.channel.send(`**Your username:** \`${message.author.username}\`\n**Your ID:** \`${message.author.id}\``);
+    message.channel.send(`**Your username:** \`${message.author.username}\`\n**Your ID:** \`${message.author.id}\`\n**Created on:** \`${message.author.createdAt}\`\n**Discord tag:** \`${message.author.tag}\`\n`);
        }
     if (message.content === '?ping') {
        message.channel.send(`:ping_pong: motherfucker! Latency is **${Math.round(client.ping)}ms**`);
