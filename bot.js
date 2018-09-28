@@ -1,6 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("./config.json");
+const cheerio = require('cheerio'),
+      snekfetch = require('snekfetch'),
+      querystring = require('querystring');
+
 client.on('ready', () => {
   console.log('I am ready!');
 });
@@ -76,19 +80,36 @@ client.on('message', message => {
     // Send the embed to the same channel as the message
     message.channel.send(embed);
   }
-  if (message.content.startsWith(config.prefix + "eval")) {
-    if(message.author.id !== config.ownerID) return;
-    try {
-      const code = args.join(" ");
-      let evaled = eval(code);
+  
+if (message.content.startsWith('?google')) {
+// Depending on your command framework (or if you use one), it doesn't have to
+// edit messages so you can rework it to fit your needs. Again, this doesn't have
+// to be async if you don't care about message editing.
+async function googleCommand(msg, args) {
 
-      if (typeof evaled !== "string")
-        evaled = require("util").inspect(evaled);
+   // These are our two variables. One of them creates a message while we preform a search,
+   // the other generates a URL for our crawler.
+   let searchMessage = await <Message>.reply('Searching... Sec.');
+   let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(msg.content)}`;
 
-      message.channel.send(clean(evaled), {code:"xl"});
-    } catch (err) {
-      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-    }
-  }
+   // We will now use snekfetch to crawl Google.com. Snekfetch uses promises so we will
+   // utilize that for our try/catch block.
+   return snekfetch.get(searchUrl).then((result) => {
+
+      // Cheerio lets us parse the HTML on our google result to grab the URL.
+      let $ = cheerio.load(result.text);
+
+      // This is allowing us to grab the URL from within the instance of the page (HTML)
+      let googleData = $('.r').first().find('a').first().attr('href');
+
+      // Now that we have our data from Google, we can send it to the channel.
+      googleData = querystring.parse(googleData.replace('/url?', ''));
+      searchMessage.edit(`Result found!\n${googleData.q}`);
+
+  // If no results are found, we catch it and return 'No results are found!'
+  }).catch((err) => {
+     searchMessage.edit('No results found!');
+  });
+}
  });
 client.login(process.env.BOT_TOKEN);
