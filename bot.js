@@ -71,17 +71,18 @@ client.on('message', message => {
     if (message.content === prefix + 'ping') {
        message.channel.send(`:ping_pong: motherfucker! Latency is **${Math.round(client.ping)}ms**`);
        }
-  if (message.content === prefix + 'embed') {
+  if (message.content === prefix + 'help') {
     // We can create embeds using the MessageEmbed constructor
     // Read more about all that you can do with the constructor
     // over at https://discord.js.org/#/docs/main/stable/class/RichEmbed
     const embed = new Discord.RichEmbed()
       // Set the title of the field
-      .setTitle('Server Information')
+      .setTitle('Help')
       // Set the color of the embed
       .setColor(0xFF0000)
       // Set the main content of the embed
-      .setDescription(`\n**Name:** ${message.guild.name}\n**Members:** ${message.guild.memberCount}\n**Server created:** ${message.guild.createdAt}\n**Region:** ${message.guild.region}`);
+      .setDescription(`List of all commands ready to be used/secure. Be sure to use the prefix \`?\` before running a command.\n**Commands**\n`),
+          (`\`kick\`, \`ban\`, \`ping\`, \`server\`, \`user\`, \`clean\``) ;
     // Send the embed to the same channel as the message
     message.channel.send(embed);
   }
@@ -117,7 +118,7 @@ async function googleCommand(msg, args) {
      });
    }
  }
-         if (message.content.startsWith(prefix + 'blackhole')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
+         if (message.content.startsWith(prefix + 'clean')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         async function purge() {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
