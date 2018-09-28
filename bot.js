@@ -67,11 +67,11 @@ client.on('message', message => {
     // over at https://discord.js.org/#/docs/main/stable/class/RichEmbed
     const embed = new Discord.RichEmbed()
       // Set the title of the field
-      .setTitle('A slick little embed')
+      .setTitle('Server Information')
       // Set the color of the embed
       .setColor(0xFF0000)
       // Set the main content of the embed
-      .setDescription('Hello, this is a slick embed!');
+      .setDescription('\n**Name:** \`${message.guild.name}\`\n**Members:** \`${message.guild.memberCount}\`\n**Server created:** \`${message.guild.createdAt}\`\n**Region:** \`${message.guild.region}\`');
     // Send the embed to the same channel as the message
     message.channel.send(embed);
   }
