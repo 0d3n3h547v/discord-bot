@@ -29,7 +29,6 @@ client.on('message', message => {
       message.reply('you didn\'t mention the user to kick!');
     }
   }
-})
 //=================================================================== ban
     if (message.content.startsWith('?ban')) {
       if(!message.member.roles.some(r=>["OWNERS"].includes(r.name)) )
