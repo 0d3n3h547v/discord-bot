@@ -109,7 +109,8 @@ async function googleCommand(msg, args) {
   // If no results are found, we catch it and return 'No results are found!'
   }).catch((err) => {
      searchMessage.edit('No results found!');
-  });
-}
+     });
+   }
+ }
  });
 client.login(process.env.BOT_TOKEN);
