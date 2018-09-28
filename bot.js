@@ -121,6 +121,8 @@ async function googleCommand(msg, args) {
         // We have to wrap this in an async since awaits only work in them.
         async function purge() {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
+              if(!message.member.roles.some(r=>["OWNERS", "Admin", "Masters of Pokémon", "Mod", "Creator"].includes(r.name)) )
+    return message.reply("You need the \`moderators role\` to use this command.");
             // We want to check if the argument is a number
             if (isNaN(args[0])) {
                 // Sends a message to the channel.
