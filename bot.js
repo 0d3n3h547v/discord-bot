@@ -53,7 +53,7 @@ client.on('message', message => {
     }
 //===================================================================== help
     if (message.content === '?server') {
-       message.channel.send(`:satellite_orbital:\`\`\`js\n$GETTING SERVER INFORMATION:\n\nName: **${message.guild.name}**\nMembers: **${message.guild.memberCount}**\nServer created: **${message.guild.createdAt}**\nRegion: **${message.guild.region}**\n\n$end transmission\`\`\``);
+       message.channel.send(`:satellite_orbital:\`\`\`js\n$GETTING SERVER INFORMATION:\n\nName: ${message.guild.name}\nMembers: ${message.guild.memberCount}\nServer created: ${message.guild.createdAt}\nRegion: ${message.guild.region}\n\n$end transmission\`\`\``);
        }
     else if (message.content === `?user`) {
     message.channel.send(`**Your username:** \`${message.author.username}\`\n**Your ID:** \`${message.author.id}\``);
@@ -71,7 +71,7 @@ client.on('message', message => {
       // Set the color of the embed
       .setColor(0xFF0000)
       // Set the main content of the embed
-      .setDescription('\n**Name:** ${message.guild.name}\n**Members:** ${message.guild.memberCount}\n**Server created:** ${message.guild.createdAt}\n**Region:** ${message.guild.region}');
+      .setDescription(`\n**Name:** ${message.guild.name}\n**Members:** ${message.guild.memberCount}\n**Server created:** ${message.guild.createdAt}\n**Region:** ${message.guild.region}`);
     // Send the embed to the same channel as the message
     message.channel.send(embed);
   }
