@@ -71,7 +71,7 @@ client.on('message', message => {
       // Set the color of the embed
       .setColor(0xFF0000)
       // Set the main content of the embed
-      .setDescription('\n**Name:** \`${message.guild.name}\`\n**Members:** \`${message.guild.memberCount}\`\n**Server created:** \`${message.guild.createdAt}\`\n**Region:** \`${message.guild.region}\`');
+      .setDescription('\n**Name:** ${message.guild.name}\n**Members:** ${message.guild.memberCount}\n**Server created:** ${message.guild.createdAt}\n**Region:** ${message.guild.region}');
     // Send the embed to the same channel as the message
     message.channel.send(embed);
   }
