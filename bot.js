@@ -121,7 +121,7 @@ async function googleCommand(msg, args) {
          if (message.content.startsWith(prefix + 'clean')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         async function purge() {
-            message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
+             // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
               if(!message.member.roles.some(r=>["OWNERS", "Admin", "Masters of Pokémon", "Mod", "Creator"].includes(r.name)) )
     return message.reply("You need the \`moderators role\` to use this command.");
             // We want to check if the argument is a number
@@ -137,6 +137,7 @@ async function googleCommand(msg, args) {
 
             // Deleting the messages
             message.channel.bulkDelete(fetched)
+              return message.reply(`successfully cancelled ${limit: args[0]} messages`);
                 .catch(error => message.channel.send(`Error: ${error}`)); // If it finds an error, it posts it into the channel.
 
         }
