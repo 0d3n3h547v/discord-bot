@@ -151,13 +151,12 @@ async function googleCommand(msg, args) {
     return message.reply("You need the \`moderators role\` to use this command.");
             resetBot(message.channel);
     }
-});
-
 // Turn bot off (destroy), then turn it back on
 function resetBot(channel) {
     // send channel a message that you're resetting bot [optional]
     channel.send('Resetting...')
     .then(msg => client.destroy())
     .then(() => client.login(BOT_TOKEN));
-}
+     }
+});
 client.login(process.env.BOT_TOKEN);
