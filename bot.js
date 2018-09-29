@@ -148,8 +148,8 @@ async function googleCommand(msg, args) {
 ('message', message => {
    if (message.content === prefix + 'reset') {
     message.reply('Resetting...');
-    .then(msg => client.destroy())
-    .then(() => client.login(BOT_TOKEN));
+    then(msg => client.destroy())
+    then(() => client.login(BOT_TOKEN));
      }
 });
 client.login(process.env.BOT_TOKEN);
