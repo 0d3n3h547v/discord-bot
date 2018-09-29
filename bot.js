@@ -63,7 +63,7 @@ client.on('message', message => {
     }
 //===================================================================== help
     if (message.content === prefix + 'server') {
-       message.channel.send(`:satellite_orbital:\`\`\`js\n$GETTING SERVER INFORMATION:\n\nName: ${message.guild.name}\nServer ID: ${message.guild.id}\nMembers: ${message.guild.memberCount}\nServer build: ${message.guild.createdAt}\nServer Creator: ${message.guild.owner}\nOwner ID: ${message.guild.ownerID}\nRegion: ${message.guild.region}\nVerification level: ${message.guild.verificationLevel}\nServer verified: ${message.guild.verified}\n\n\n$end transmission\`\`\``);
+       message.channel.send(`:satellite_orbital:\`\`\`\nGETTING SERVER INFORMATION:\n\nName: ${message.guild.name}\nServer ID: ${message.guild.id}\nMembers: ${message.guild.memberCount}\nServer build: ${message.guild.createdAt}\nServer Creator: ${message.guild.owner}\nOwner ID: ${message.guild.ownerID}\nRegion: ${message.guild.region}\nVerification level: ${message.guild.verificationLevel}\nServer verified: ${message.guild.verified}\n\n\n$end transmission\n\`\`\``);
        }
     else if (message.content === prefix + 'user') {
     message.channel.send(`**Your username:** \`${message.author.username}\`\n**Your ID:** \`${message.author.id}\`\n**Created on:** \`${message.author.createdAt}\`\n**Discord tag:** \`${message.author.tag}\`\n`);
