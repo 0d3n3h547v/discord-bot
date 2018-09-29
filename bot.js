@@ -63,21 +63,7 @@ client.on('message', message => {
     }
 //===================================================================== help
       
-      (message.content === prefix + 'server') {
-    // We can create embeds using the MessageEmbed constructor
-    // Read more about all that you can do with the constructor
-    // over at https://discord.js.org/#/docs/main/stable/class/RichEmbed
-    const embed = new Discord.RichEmbed()
-      // Set the title of the field
-      .setTitle('SERVER INFORMATION')
-      // Set the color of the embed
-      .setColor(0xFF0000)
-      // Set the main content of the embed
-      .setDescription (`Name: ${message.guild.name}\nServer ID: ' + ${message.guild.id} + '\nMembers: ' + ${message.guild.memberCount} + '\nServer build: ì + ${message.guild.createdAt} + '\nServer Creator: ' + ${message.guild.owner} + '\nOwner ID: ' + ${message.guild.ownerID} + '\nRegion: ' + ${message.guild.region} + '\nVerification level: ' + ${message.guild.verificationLevel} + '\nServer verified: ' + ${message.guild.verified} + '`) ;
-    // Send the embed to the same channel as the message
-    message.channel.send(embed);
-      }
-    if (message.content === prefix + 'server1') {
+    if (message.content === prefix + 'server') {
        message.channel.send(`\nGETTING SERVER INFORMATION:\n\nName: ${message.guild.name}\nServer ID: ${message.guild.id}\nMembers: ${message.guild.memberCount}\nServer build: ${message.guild.createdAt}\nServer Creator: ${message.guild.owner}\nOwner ID: ${message.guild.ownerID}\nRegion: ${message.guild.region}\nVerification level: ${message.guild.verificationLevel}\nServer verified: ${message.guild.verified}\n\n\n$end transmission\n\`\`\``);
        }
     else if (message.content === prefix + 'user') {
