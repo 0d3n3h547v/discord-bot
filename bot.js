@@ -76,7 +76,7 @@ client.on('message', message => {
       .setDescription (`Name: ${message.guild.name}\nServer ID: ' + ${message.guild.id} + '\nMembers: ' + ${message.guild.memberCount} + '\nServer build: ì + ${message.guild.createdAt} + '\nServer Creator: ' + ${message.guild.owner} + '\nOwner ID: ' + ${message.guild.ownerID} + '\nRegion: ' + ${message.guild.region} + '\nVerification level: ' + ${message.guild.verificationLevel} + '\nServer verified: ' + ${message.guild.verified} + '`) ;
     // Send the embed to the same channel as the message
     message.channel.send(embed);
-      
+      }
     if (message.content === prefix + 'server1') {
        message.channel.send(`\nGETTING SERVER INFORMATION:\n\nName: ${message.guild.name}\nServer ID: ${message.guild.id}\nMembers: ${message.guild.memberCount}\nServer build: ${message.guild.createdAt}\nServer Creator: ${message.guild.owner}\nOwner ID: ${message.guild.ownerID}\nRegion: ${message.guild.region}\nVerification level: ${message.guild.verificationLevel}\nServer verified: ${message.guild.verified}\n\n\n$end transmission\n\`\`\``);
        }
