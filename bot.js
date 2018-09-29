@@ -126,7 +126,7 @@ async function googleCommand(msg, args) {
             // We want to check if the argument is a number
             if (isNaN(args[0])) {
                 // Sends a message to the channel.
-                message.channel.send('Please use a number as your arguments. \n Usage: ' + prefix + 'purge <amount>'); //\n means new line.
+                message.channel.send('Please use a number as your arguments. \n Usage: \`' + prefix + 'clean <amount>\`'); //\n means new line.
                 // Cancels out of the script, so the rest doesn't run.
                 return;
             }
