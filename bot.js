@@ -147,10 +147,7 @@ async function googleCommand(msg, args) {
  });
 ('message', message => {
    if (message.content === prefix + 'reset') {
-         if(!message.member.roles.some(r=>["OWNERS", "Admin", "Masters of Pokémon", "Mod", "Creator"].includes(r.name)) )
-    return message.reply("You need the \`moderators role\` to use this command.");
-           
-    channel.send('Resetting...')
+    message.reply('Resetting...');
     .then(msg => client.destroy())
     .then(() => client.login(BOT_TOKEN));
      }
