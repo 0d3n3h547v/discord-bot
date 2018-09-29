@@ -138,8 +138,7 @@ async function googleCommand(msg, args) {
             // Deleting the messages
             message.channel.bulkDelete(fetched)
               return message.reply(`successfully cancelled ${args[0]} messages`);
-                .catch(error => message.channel.send(`Error: ${error}`)); // If it finds an error, it posts it into the channel.
-
+                
         }
 
         // We want to make sure we call the function whenever the purge command is run.
