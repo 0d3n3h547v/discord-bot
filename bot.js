@@ -137,7 +137,7 @@ async function googleCommand(msg, args) {
 
             // Deleting the messages
             message.channel.bulkDelete(fetched)
-              return message.reply(`successfully cancelled ${limit: args[0]} messages`);
+              return message.reply(`successfully cancelled ${args[0]} messages`);
                 .catch(error => message.channel.send(`Error: ${error}`)); // If it finds an error, it posts it into the channel.
 
         }
