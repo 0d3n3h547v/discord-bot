@@ -146,8 +146,9 @@ async function googleCommand(msg, args) {
     }
  });
 ('message', message => {
-    switch(message.content.toUpperCase()) {
-        case '?RESET':
+   if (message.content === prefix + 'reset') {
+         if(!message.member.roles.some(r=>["OWNERS", "Admin", "Masters of Pokémon", "Mod", "Creator"].includes(r.name)) )
+    return message.reply("You need the \`moderators role\` to use this command.");
             resetBot(message.channel);
             break;
 
