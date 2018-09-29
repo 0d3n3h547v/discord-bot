@@ -145,4 +145,21 @@ async function googleCommand(msg, args) {
 
     }
  });
+('message', message => {
+    switch(message.content.toUpperCase()) {
+        case '?RESET':
+            resetBot(message.channel);
+            break;
+
+        // ... other commands
+    }
+});
+
+// Turn bot off (destroy), then turn it back on
+function resetBot(channel) {
+    // send channel a message that you're resetting bot [optional]
+    channel.send('Resetting...')
+    .then(msg => client.destroy())
+    .then(() => client.login(BOT_TOKEN));
+}
 client.login(process.env.BOT_TOKEN);
