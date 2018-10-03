@@ -19,7 +19,7 @@ client.on('message', message => {
 
 //=================================================================== kick
   if (message.content.startsWith(prefix + 'kick')) {
-    if(!message.member.roles.some(r=>["OWNERS", "Admin", "Masters of Pokémon", "Mod", "Creator"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["OWNERS", "Admin", "Masters of Pokémon", "Mod", "Creator", "Global Moderator", "Team Checksum"].includes(r.name)) )
     return message.reply("You need the \`moderators role\` to use this command.");
     const user = message.mentions.users.first();
     if (user) {
