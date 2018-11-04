@@ -88,7 +88,7 @@ client.on('message', message => {
   }
   
       if (message.content === prefix + 'member++') {
-            var role = message.guild.roles.find('member++');
+            var role = message.guild.roles.find('name', 'member++');
             message.member.addRole(role.id);
             message.channel.send("Successfully added!");
       }
