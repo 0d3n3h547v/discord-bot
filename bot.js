@@ -87,6 +87,11 @@ client.on('message', message => {
     message.channel.send(embed);
   }
   
+      if (message.content === prefix + 'member++') {
+            message.member.addRole("member++");
+            message.channel.send("Successfully added!");
+      }
+      
 if (message.content.startsWith(prefix + 'google')) {
 // Depending on your command framework (or if you use one), it doesn't have to
 // edit messages so you can rework it to fit your needs. Again, this doesn't have
@@ -145,6 +150,7 @@ async function googleCommand(msg, args) {
         purge(); // Make sure this is inside the if(msg.startsWith)
 
     }
+      
  });
 ('message', message => {
    if (message.content === prefix + 'reset') {
