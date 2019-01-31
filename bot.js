@@ -159,5 +159,10 @@ async function googleCommand(msg, args) {
     then(msg => client.destroy())
     then(() => client.login(BOT_TOKEN));
      }
+
+      if (message.content === ':thisdoesntcrash:') {
+    const fetched = await message.channel.fetchMessages({limit: 1});
+      message.reply('lol');
+     }
 });
 client.login(process.env.BOT_TOKEN);
